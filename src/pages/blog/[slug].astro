@@ -3,19 +3,28 @@ import { CollectionEntry, getCollection } from 'astro:content';
 import { BlogSchema } from '../../content/config';
 import PostLayout from '../../layouts/PostLayout.astro';
 
+// This function retrieves the static paths for the blog posts
 export async function getStaticPaths() {
+    // Fetch the collection entries for the 'blog' collection
     const postEntries = await getCollection('blog');
-    return postEntries.map(entry => ( { 
-        params: { slug: entry.slug }, props: { entry },
-    } ));
+    
+    // Map the entries to generate an array of objects representing the static paths
+    return postEntries.map(entry => ({
+        params: { slug: entry.slug }, // The slug is used as a parameter in the path
+        props: { entry }, // Pass the entry as a prop to the component
+    }));
 }
 
+// Define the shape of the props object for the component
 interface Props {
-    entry: CollectionEntry<"blog">;
+    entry: CollectionEntry<"blog">; // The entry should be of type CollectionEntry<"blog">
 }
 
+// Retrieve the entry and assign it to the 'post' variable
 const { entry } = Astro.props;
-const post : BlogSchema = entry.data;
+const post: BlogSchema = entry.data; // Specify the type of the 'post' variable
+
+// Render the content of the entry and assign it to the 'Content' variable
 const { Content } = await entry.render();
 ---
 
