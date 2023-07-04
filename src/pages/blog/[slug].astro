@@ -37,3 +37,16 @@ const { Content } = await entry.render();
     badge={post.badge}>
     <Content/>
 </PostLayout>
+
+<script>
+    //script for when blog in lg will delete lg:drawer-open n lg:hidden so it will not show sidebar
+document.addEventListener("DOMContentLoaded", function() {
+  const drawerBase = document.getElementById("drawer-base");
+  const drawerTop = document.getElementById("drawer-top");
+
+  drawerBase?.classList.remove("lg:drawer-open");
+  drawerTop?.classList.remove("lg:hidden");
+
+});
+
+</script>
