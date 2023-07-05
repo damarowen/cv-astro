@@ -1,3 +1,12 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+@font-face {
+    font-family: 'VCR';
+    src: url('/fonts/VCR_OSD_MONO.ttf') format('truetype');
+  }
+
+  .font-vcr-osd-mono {
+    font-family: 'VCR', monospace;
+  }
