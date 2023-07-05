@@ -1,5 +1,5 @@
 import { z, defineCollection } from "astro:content";
-import { blogSchema, storeSchema } from "./schema";
+import { blogSchema, storeSchema } from "./_schema";
 
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
