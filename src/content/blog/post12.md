@@ -2,15 +2,12 @@
 title: "TypeScript Generics Explained ! "
 description: "Short story about Generics in TS"
 pubDate: "Sep 22 2022"
-heroImage: "https://res.cloudinary.com/damarowen/image/upload/v1672051626/Blog/nq49uttwc3bwgkyirn8j.jpg"
+heroImage: "https://res.cloudinary.com/damarowen/image/upload/v1665298999/Blog/g1d6by9mwmwugfa5a9qq.jpg"
 badge: "Demo badge"
 
 ---
-
 ## Background Story
-
 if you have a function like 
-
 
 ```js
 function printData(data: number | string | boolean | any}) {

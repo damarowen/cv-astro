@@ -2,6 +2,13 @@
     display: none;
 }
 
+
+img, picture :global(img), svg {
+  margin-block: 2.5rem;
+  border-radius: 10px;
+  background-color: red;
+}
+
 @font-face {
     font-family: 'VCR';
     src: url('/fonts/VCR_OSD_MONO.ttf') format('truetype');
