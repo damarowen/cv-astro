@@ -6,6 +6,7 @@ import SideBar from "../components/SideBar.astro";
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import '../styles/center-radar.css';
+import TawkTo from "../components/TawkTo.astro";
 
 const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSidebar = true, sideBarActiveItemID } = Astro.props;
 ---
@@ -16,6 +17,7 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSideba
     <BaseHead title={title} description={description} image={image} />
     <script src="../styles/loader.js"></script>
   </head>
+  <TawkTo /> <!-- Panggil komponen di sini -->
   <body>
     <div id="visibility-trigger" style="visibility: hidden;">
       <div id="drawer-base" class="bg-base-100 drawer lg:drawer-open">
