@@ -9,8 +9,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   </div>
 
   <div class="mb-10 text-justify">
-    As a Back End Developer, I have more than 2 years experience<br>
-   As a Professional Worker, I have more than 4 years experience with responsibility to manage team, build chemistry between member and serve client or customer with dynamic background from outside or within company
+    As a Back End Developer, I have more than 4 years experience<br>
+   As a Professional Worker, I have more than 5 years experience with responsibility to manage team, build chemistry between member and serve client or customer with dynamic background from outside or within company
   </div>
 
   <div class="mb-5">
@@ -79,7 +79,8 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <div class="text-3xl w-full font-bold">Skills</div>
   </div>
 
-  <ul class="list-disc md:columns-3 columns-2 mx-6">
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-10">
+    <li>NestJS/Node JS</li>
     <li>Golang</li>
     <li>Python</li>
     <li>Javascript</li>
@@ -95,4 +96,24 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <li>Hexagonal Archictechture</li>
 
   </ul>
+
+    <!-- Add after Skills section -->
+    <div class="mb-5">
+      <div class="text-3xl w-full font-bold">Languages</div>
+    </div>
+    <ul class="list-disc mx-6 mb-10">
+      <li>Indonesian — Native</li>
+      <li>English — Professional working proficiency</li>
+    </ul>
+
+
+    <!-- Add print/download button at the top or bottom -->
+    <div class="mb-5 flex items-center gap-2">
+      <a href="https://drive.google.com/file/d/13CyJbbn_q_RVg5j27Z2VigrS_GR8AltF/view?usp=sharing" target="_blank"  class="flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded shadow hover:scale-105 transition-transform duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v-4m0 0V4m0 8l-4-4m4 4l4-4M4 20h16" />
+        </svg>
+        Download/Print PDF
+      </a>
+    </div>
 </BaseLayout>
