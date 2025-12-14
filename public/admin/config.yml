@@ -1,0 +1,86 @@
+# Decap CMS Configuration for cv-astro blog
+
+# Backend Configuration
+# IMPORTANT: Update base_url after deploying your OAuth server to Vercel
+backend:
+  name: github
+  repo: damarowen/cv-astro
+  branch: main
+  # TODO: Replace with your deployed Vercel OAuth app URL
+  # Example: https://decap-cms-oauth-yourname.vercel.app
+  base_url: https://your-vercel-oauth-app.vercel.app
+
+# Editorial workflow - enables draft/review/publish states
+publish_mode: editorial_workflow
+
+# Media handling - using external URLs (Cloudinary)
+# No media_folder needed since images are hosted externally
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Slug configuration
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Collections
+collections:
+  # Blog Posts Collection
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "src/content/blog"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields:
+      fields: ["pubDate", "title"]
+      default:
+        field: "pubDate"
+        direction: "Descending"
+    summary: "{{title}} - {{pubDate}}"
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "The title of your blog post"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "A brief description for SEO and previews"
+
+      - label: "Publish Date"
+        name: "pubDate"
+        widget: "string"
+        required: true
+        hint: "Format: MMM DD YYYY (e.g., Jul 01 2023)"
+        default: ""
+
+      - label: "Updated Date"
+        name: "updatedDate"
+        widget: "string"
+        required: false
+        hint: "Optional: Date when post was last updated"
+
+      - label: "Hero Image URL"
+        name: "heroImage"
+        widget: "string"
+        required: false
+        hint: "Full URL to hero image (e.g., Cloudinary URL)"
+
+      - label: "Badge"
+        name: "badge"
+        widget: "string"
+        required: false
+        hint: "Optional badge text (e.g., 'New', 'Featured')"
+
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        required: true
